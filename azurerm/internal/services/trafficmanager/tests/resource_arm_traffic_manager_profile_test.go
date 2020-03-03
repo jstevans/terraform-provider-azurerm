@@ -314,6 +314,11 @@ resource "azurerm_traffic_manager_profile" "test" {
       "100-101",
       "301-303",
     ]
+    
+    custom_headers {
+    	name = "foo"
+	value = "bar"
+    }
 
     protocol = "tcp"
     port     = 777
@@ -356,6 +361,11 @@ resource "azurerm_traffic_manager_profile" "test" {
     expected_status_code_ranges = [
       "302-304",
     ]
+    
+    custom_headers {
+    	name = "foo2"
+	value = "bar2"
+    }
 
     protocol = "https"
     port     = 442
